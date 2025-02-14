@@ -9,7 +9,6 @@ function DetailsPage() {
 	let params = useParams();
 	let navigate = useNavigate();
 	const { data, isFetching, error } = useGetImageQuery(params.id);
-	console.log(data);
 	if (isFetching) {
 		return (
 			<div className="flex flex-col justify-center items-center gap-4 mt-12  mb-12">
