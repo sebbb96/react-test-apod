@@ -14,7 +14,7 @@ Follow these steps to set up and run the application locally:
 Clone the repository to your local machine using the following command:
 
 ```bash
-git clone https://github.com/your-username/nasa-astronomy-picture-explorer.git
+git clone https://github.com/your-username/react-test-apod.git
 ```
 
 ## 2. Navigate to the Project Directory
