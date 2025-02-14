@@ -1,50 +1,86 @@
-# React + TypeScript + Vite
+# NASA Astronomy Picture Explorer
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Setup Guide for NASA Astronomy Picture Explorer
 
-Currently, two official plugins are available:
+Follow these steps to set up and run the application locally:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Prerequisites
 
-## Expanding the ESLint configuration
+- **Node.js** (version 14 or higher)
+- **Yarn** (package manager)
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## 1. Clone the Repository
 
-- Configure the top-level `parserOptions` property like this:
+Clone the repository to your local machine using the following command:
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-});
+```bash
+git clone https://github.com/your-username/nasa-astronomy-picture-explorer.git
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+## 2. Navigate to the Project Directory
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react';
+Change into the project directory:
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-});
+```bash
+cd nasa-astronomy-picture-explorer
+```
+
+## 3. Install Dependencies
+
+Install the required dependencies using Yarn:
+
+```bash
+yarn install
+```
+
+## 4. Set Up Environment Variables
+
+Create a `.env` file in the root of the project and add your NASA API key(you
+get your API key from [NASA API Documentation](https://api.nasa.gov/).):
+
+```plaintext
+VITE_API_KEY=your_nasa_api_key
+VITE_BASE_URL=https://api.nasa.gov/planetary/
+```
+
+## 5. Run the Development Server
+
+Start the development server with the following command:
+
+```bash
+yarn dev
+```
+
+The application should now be running at `http://localhost:5173`.
+
+## 6. Build for Production
+
+To build the application for production, run:
+
+```bash
+yarn build
+```
+
+This will create a `dist` folder containing the production-ready files.
+
+## 7. Serve the Production Build
+
+You can serve the production build using a static server. If you have `serve`
+installed globally, you can run:
+
+```bash
+yarn global add serve
+serve -s dist
+```
+
+Now, your application will be available at `http://localhost:5000`.
+
+## Note on Corepack
+
+If you are using Yarn 2 or later, you may need to install and enable
+[Corepack](https://github.com/nodejs/corepack). to manage package managers. You
+can do this by running:
+
+```bash
+corepack enable
 ```
